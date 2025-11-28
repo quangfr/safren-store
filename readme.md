@@ -24,7 +24,7 @@ Un portail unique, simple et rapide pour accéder à toutes les petites applicat
 - Historique moteur rapide  
 - **Simulateur de calcul** (coût, délai, charge, TAT, capacité)  
 - **Conversion fichier Excel → mini-app** (importer → visualiser, filtrer, résumer)  
-- **App légère serverless APIsé** exposant ou collectant des données opérationnelles (pièces critiques, modules, écarts qualité…)
+- **App légère serverless APIsé** exposant des données opérationnelles sur un périmètre restreint (pièces critiques, modules, écarts qualité…) ou remontant la donnée du terrain
 
 ---
 
