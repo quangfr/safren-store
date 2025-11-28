@@ -1,44 +1,51 @@
-## Vision "Safren Play Store" – Boîte à outils décisionnelle (fast apps)
+## Vision "Safren Play Store" – Boîte à outils décisionnelle (AWS)
 
-### 🎯 Objectif
-Créer un portail unique regroupant des mini-applications métiers légères, rapides à développer et utiles pour les équipes MRO, Support & Services, Qualité et Logistique.  
-Une entrée unique → des décisions plus rapides → moins d’Excel cachés → accès en mobilité.
-
----
-
-### 🧰 Une boîte à outils pour les opérationnels Safren
-- Centralise les outils utiles au quotidien : préparer, analyser, prioriser, alerter.
-- Conçu pour les équipes atelier, plateaux Projet, S&S et terrain.
-- Adapté à des contextes déplacements / interventions / réunions client.
+### 🎯 Idée générale
+Un portail unique, simple et rapide pour accéder à toutes les petites applications utiles aux équipes Safren : atelier, logistique, support, qualité, engineering.
 
 ---
 
-### 🏪 "Safren Play Store"
-- Une page d’accueil interne listant les fast apps disponibles.
-- Filtres : métier (MRO, S&S, Qualité, Logistique), type de décision (prioriser, analyser, alerter).
-- Vignettes simples : nom, objectif, 1 capture, 1 bouton “ouvrir”.
-- Mise en avant des apps recommandées selon le rôle de l’utilisateur.
+### 🧰 Ce que propose le Safren Play Store
+- Une **entrée unique** pour tous les outils du quotidien.  
+- Accessible sur **PC / tablette / mobile**, même en déplacement.  
+- Chaque app répond à **un besoin métier clair** : préparer, analyser, décider, prioriser, alerter, simuler.
 
 ---
 
-### 🔐 Authentification & rôles (centralisation)
-- SSO Groupe Safren (Azure AD / IAM interne).
-- Le Play Store gère la connexion → les apps héritent automatiquement du token.
-- Gestion unifiée des accès :
-  - Qui voit quelles apps ?
-  - Lecture / saisie / validation selon rôle (atelier, expert, S&S, qualité).
-- Pas de réauthentification dans les apps.
-
----
-
-### 🔧 Exemples d’applications (fast apps Safren – moteur d’avion)
-
-#### **Atelier / MRO**
+### 🔧 Exemples d’applications (Fast Apps – moteur d’avion)
 - Prépa workscope express  
 - Tri findings critique  
 - Scrap vs repair guidé  
-- Planning charge modules  
+- Suivi pièces critiques / priorités AOG  
+- Mini cockpit TAT/OTD (CSV → graphs)  
+- Synthèse dossier moteur  
 - Déviation / concession simplifiée  
+- Générateur CR incident  
+- Historique moteur rapide  
+- **Simulateur de calcul** (coût, délai, charge, TAT, capacité)  
+- **Conversion fichier Excel → mini-app** (coller un tableau → visualiser, filtrer, résumer)  
+- **App légère connectée à une API** exposant des données opérationnelles (pièces critiques, modules, écarts qualité…)
 
-#### **Logistique**
-- S
+---
+
+### 🔐 Auth simplifiée (AWS)
+- Connexion **SSO Safren** une seule fois.  
+- Le Play Store affiche uniquement les apps autorisées pour le métier / rôle.  
+- Les apps n’ont pas à gérer l’authentification.
+
+---
+
+### ⚙️ Côté AWS (version courte)
+- **S3 + CloudFront** : héberge le Play Store + les fast apps.  
+- **Lambda / API Gateway** : petites APIs pour :
+  - lire des données opérationnelles,  
+  - exposer une vue filtrée (pièces critiques, modules…),  
+  - envoyer une notification.  
+- **SSO central** : Cognito / IAM Identity Center.
+
+---
+
+### 🧭 Pour les opérationnels Safren
+- Un seul portail → tous les outils utiles.  
+- Moins de liens éparpillés, moins d’Excel cachés.  
+- Décisions plus rapides, plus cohérentes, même en mobilité.
