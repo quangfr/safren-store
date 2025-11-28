@@ -23,8 +23,8 @@ Un portail unique, simple et rapide pour accéder à toutes les petites applicat
 - Générateur CR incident  
 - Historique moteur rapide  
 - **Simulateur de calcul** (coût, délai, charge, TAT, capacité)  
-- **Conversion fichier Excel → mini-app** (coller un tableau → visualiser, filtrer, résumer)  
-- **App légère connectée à une API** exposant des données opérationnelles (pièces critiques, modules, écarts qualité…)
+- **Conversion fichier Excel → mini-app** (importer → visualiser, filtrer, résumer)  
+- **App légère serverless APIsé** exposant ou collectant des données opérationnelles (pièces critiques, modules, écarts qualité…)
 
 ---
 
@@ -36,11 +36,12 @@ Un portail unique, simple et rapide pour accéder à toutes les petites applicat
 ---
 
 ### ⚙️ Côté AWS (version courte)
-- **S3 + CloudFront** : héberge le Play Store + les fast apps.  
+- **S3 + CloudFront** : héberge le Play Store + les fast apps en front  
 - **Lambda / API Gateway** : petites APIs pour :
   - lire des données opérationnelles,  
   - exposer une vue filtrée (pièces critiques, modules…),  
-  - envoyer une notification.  
+  - envoyer une notification
+  - faire les transformations de données (middlewares)   
 - **SSO central** : Cognito / IAM Identity Center.
 
 ---
