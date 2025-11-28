@@ -36,12 +36,12 @@ Un portail unique, simple et rapide pour accéder à toutes les petites applicat
 ---
 
 ### ⚙️ Côté AWS (version courte)
-- **S3 + CloudFront** : héberge le Play Store + les fast apps en front  
+- **S3 + CloudFront** : héberge le Play Store + les fast apps HTML/CSS/JS
 - **Lambda / API Gateway** : petites APIs pour :
   - lire des données opérationnelles,  
   - exposer une vue filtrée (pièces critiques, modules…),  
   - envoyer une notification
-  - faire les transformations de données (middlewares)   
+  - transformer / faire les mappings de données (middlewares)   
 - **SSO central** : Cognito / IAM Identity Center.
 
 ---
